@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sidineyr.github.io/bb/sitemap.xml

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132a59">
+  <meta name="description" content="Percurso gratuito e bilíngue para aprender internet, inteligência artificial, verificação de informações e segurança digital.">
+  <link rel="canonical" href="https://sidineyr.github.io/bb/">
+  <link rel="alternate" hreflang="pt-BR" href="https://sidineyr.github.io/bb/?lang=pt">
+  <link rel="alternate" hreflang="en" href="https://sidineyr.github.io/bb/?lang=en">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>BB — Bê-á-Bá da Internet e da IA</title>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LearningResource","name":"BB — Bê-á-Bá da Internet e da IA","description":"Percurso gratuito de alfabetização digital, midiática e em inteligência artificial.","inLanguage":["pt-BR","en"],"isAccessibleForFree":true,"author":{"@type":"Person","name":"Sidiney Rodrigues"},"license":"https://creativecommons.org/licenses/by/4.0/"}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="intro" id="intro" role="dialog" aria-label="Boas-vindas" aria-modal="true">
+    <button class="intro-skip" id="skipIntro" type="button" data-i18n="skip">Pular apresentação</button>
+    <img src="assets/principe-bb.webp" alt="Bibi, um pequeno príncipe original, acena enquanto segura uma lanterna digital">
+    <p data-i18n="introHello">Olá! Vamos entrar na internet juntos?</p>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="BB — página inicial">
+      <span class="brand-mark" aria-hidden="true">BB</span>
+      <span><strong>Bê-á-Bá</strong><small data-i18n="brandSub">da Internet e da IA</small></span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-button" id="fontToggle" type="button" aria-label="Aumentar texto">A+</button>
+      <button class="icon-button" id="contrastToggle" type="button" aria-label="Alternar alto contraste">◐</button>
+      <label class="language"><span class="sr-only">Idioma</span><select id="languageSelect" aria-label="Idioma"><option value="pt">PT</option><option value="en">EN</option></select></label>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="eyebrow">Meu Avô na Internet</span>
+        <h1 id="hero-title" data-i18n="heroTitle">Internet e inteligência artificial, desde o começo.</h1>
+        <p data-i18n="heroText">Um caminho curto para pesquisar, conversar, verificar informações e evitar armadilhas — sem vergonha e sem pressa.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#trilha" data-i18n="start">Começar do início</a>
+          <button class="button secondary" id="suspiciousButton" type="button" data-i18n="strange">Recebi uma mensagem estranha</button>
+        </div>
+        <p class="reassurance" data-i18n="reassurance">Você não precisa saber tudo. Precisa saber quando parar e verificar.</p>
+      </div>
+      <div class="pare-card" aria-labelledby="pare-title">
+        <span class="lantern" aria-hidden="true">✦</span>
+        <h2 id="pare-title" data-i18n="pareTitle">Antes de acreditar, PARE</h2>
+        <dl>
+          <div><dt>P</dt><dd data-i18n="pareP">Pare antes de clicar ou compartilhar.</dd></div>
+          <div><dt>A</dt><dd data-i18n="pareA">Analise quem publicou e o que está pedindo.</dd></div>
+          <div><dt>R</dt><dd data-i18n="pareR">Repare na data, endereço, contexto e evidências.</dd></div>
+          <div><dt>E</dt><dd data-i18n="pareE">Encontre confirmação em outra fonte.</dd></div>
+        </dl>
+        <button class="text-button" type="button" onclick="window.print()" data-i18n="print">Imprimir este cartão</button>
+      </div>
+    </section>
+
+    <section class="path-section" id="trilha" aria-labelledby="path-title">
+      <div class="section-heading">
+        <span class="eyebrow" data-i18n="quickPath">Percurso rápido</span>
+        <h2 id="path-title" data-i18n="pathTitle">Escolha por onde começar</h2>
+        <p data-i18n="pathText">Cada parada leva de três a cinco minutos. Seu progresso fica somente neste aparelho.</p>
+      </div>
+      <div class="progress-wrap" aria-live="polite">
+        <div class="progress-copy"><span data-i18n="progress">Seu progresso</span><strong id="progressText">0/6</strong></div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="progressBar"></span></div>
+      </div>
+      <div class="lesson-grid" id="lessonGrid"></div>
+    </section>
+
+    <section class="lab" id="laboratorio" aria-labelledby="lab-title">
+      <div class="lab-copy">
+        <span class="eyebrow" data-i18n="practice">Pratique sem risco</span>
+        <h2 id="lab-title" data-i18n="labTitle">Laboratório de mensagens</h2>
+        <p data-i18n="labText">Leia a mensagem fictícia e escolha o que faria. Errar aqui também ensina.</p>
+      </div>
+      <div class="message-lab">
+        <div class="fake-label" data-i18n="simulation">SIMULAÇÃO — não é uma mensagem real</div>
+        <blockquote id="messageText">“Vó, troquei de número. Preciso de um PIX agora. Depois explico.”</blockquote>
+        <div class="choices" id="messageChoices"></div>
+        <div class="feedback" id="messageFeedback" hidden tabindex="-1"></div>
+        <button class="text-button" id="nextMessage" type="button" data-i18n="nextExample">Ver outro exemplo</button>
+      </div>
+    </section>
+
+    <section class="compare" id="ia" aria-labelledby="compare-title">
+      <div class="section-heading">
+        <span class="eyebrow" data-i18n="aiWithoutMystery">IA sem mistério</span>
+        <h2 id="compare-title" data-i18n="compareTitle">Ferramentas diferentes, cuidados diferentes</h2>
+      </div>
+      <div class="compare-grid">
+        <article><span aria-hidden="true">⌕</span><h3 data-i18n="searchEngine">Buscador</h3><p data-i18n="searchDesc">Encontra páginas. Pode destacar anúncios ou resultados ruins.</p></article>
+        <article><span aria-hidden="true">✦</span><h3 data-i18n="ai">Inteligência artificial</h3><p data-i18n="aiDesc">Explica e cria. Pode responder com confiança mesmo quando está errada.</p></article>
+        <article><span aria-hidden="true">✓</span><h3 data-i18n="official">Fonte oficial</h3><p data-i18n="officialDesc">Confirma informações institucionais, mas às vezes usa linguagem difícil.</p></article>
+        <article><span aria-hidden="true">☺</span><h3 data-i18n="human">Profissional humano</h3><p data-i18n="humanDesc">Avalia seu caso concreto quando possui a qualificação necessária.</p></article>
+      </div>
+      <div class="privacy-note"><strong data-i18n="neverSend">Nunca envie a uma IA:</strong> <span data-i18n="privateData">senhas, códigos, documentos, dados bancários ou informações íntimas.</span></div>
+    </section>
+
+    <section class="family" id="familia" aria-labelledby="family-title">
+      <div>
+        <span class="eyebrow" data-i18n="learnTogether">Aprender junto funciona</span>
+        <h2 id="family-title" data-i18n="familyTitle">Guia para familiares</h2>
+      </div>
+      <ol>
+        <li data-i18n="family1">Não faça pela pessoa: faça com ela.</li>
+        <li data-i18n="family2">Explique uma ação de cada vez.</li>
+        <li data-i18n="family3">Nunca ridicularize uma dúvida ou um golpe sofrido.</li>
+        <li data-i18n="family4">Combine uma palavra de segurança para pedidos urgentes.</li>
+      </ol>
+    </section>
+
+    <section class="about" id="sobre" aria-labelledby="about-title">
+      <div>
+        <span class="eyebrow" data-i18n="openProject">Projeto aberto</span>
+        <h2 id="about-title" data-i18n="aboutTitle">Ensinar também é cuidar</h2>
+      </div>
+      <div>
+        <p data-i18n="aboutText">BB é uma iniciativa educacional gratuita, experimental e aberta. O conteúdo ensina um método de verificação; não funciona como detector automático da verdade.</p>
+        <details><summary data-i18n="sources">Fontes e critérios editoriais</summary><p data-i18n="sourcesText">As orientações foram organizadas a partir de materiais públicos de alfabetização midiática e segurança digital. Antes de decisões sobre saúde, justiça ou dinheiro, consulte fontes oficiais e profissionais qualificados.</p><ul><li><a href="https://www.gov.br/cidadania/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/saiba-como-se-proteger-de-golpes" target="_blank" rel="noopener">Governo Federal — prevenção de golpes</a></li><li><a href="https://www.cert.br/" target="_blank" rel="noopener">CERT.br — segurança na internet</a></li><li><a href="https://unesdoc.unesco.org/ark:/48223/pf0000224187" target="_blank" rel="noopener">UNESCO — alfabetização midiática e informacional</a></li></ul></details>
+        <details><summary data-i18n="privacy">Privacidade e acessibilidade</summary><p data-i18n="privacyText">Não pedimos cadastro nem enviamos suas respostas a um servidor. Preferências e progresso permanecem no seu navegador. O site oferece navegação por teclado, foco visível, alto contraste, texto ampliado e redução de movimento.</p></details>
+        <details><summary data-i18n="credits">Créditos e licença</summary><p><strong data-i18n="idealization">Idealização e direção:</strong> Sidiney Rodrigues.<br><span data-i18n="aiSupport">Inteligência artificial utilizada como apoio à pesquisa, redação, ilustração e desenvolvimento, sob direção e responsabilidade humanas.</span><br><span data-i18n="license">Conteúdo: CC BY 4.0 · Código: MIT.</span></p></details>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="lessonDialog" aria-labelledby="lessonTitle">
+    <button class="dialog-close" type="button" aria-label="Fechar">×</button>
+    <span class="lesson-number" id="lessonNumber"></span>
+    <h2 id="lessonTitle"></h2>
+    <p class="lesson-lead" id="lessonLead"></p>
+    <div id="lessonContent"></div>
+    <div class="dialog-actions"><button class="button secondary" id="explainAgain" type="button" data-i18n="anotherWay">Explique de outro jeito</button><button class="button primary" id="completeLesson" type="button" data-i18n="complete">Concluir etapa</button></div>
+  </dialog>
+
+  <dialog id="helpDialog" aria-labelledby="helpTitle">
+    <button class="dialog-close" type="button" aria-label="Fechar">×</button>
+    <span class="eyebrow" data-i18n="breathe">Primeiro, respire</span>
+    <h2 id="helpTitle" data-i18n="helpTitle">Recebi uma mensagem estranha</h2>
+    <ol><li data-i18n="help1">Não clique, responda ou pague agora.</li><li data-i18n="help2">Não informe senha nem código.</li><li data-i18n="help3">Confirme por outro canal, usando um contato que você já conhece.</li><li data-i18n="help4">Abra o aplicativo ou site oficial por conta própria.</li><li data-i18n="help5">Peça ajuda a alguém de confiança.</li></ol>
+    <p class="safe-callout" data-i18n="helpCallout">Urgência é uma ferramenta comum de golpes. Você pode parar.</p>
+  </dialog>
+
+  <footer>
+    <p data-i18n="footerLine">Pare. Observe. Pergunte. Verifique.</p>
+    <p class="donation" data-i18n-html="donation">Este projeto nasceu do desejo de ensinar e cuidar. Se ele tocou você, <a href="https://pequenoprincipe.org.br/doadores/apoie-o-pequeno-principe/" target="_blank" rel="noopener">considere doar diretamente ao Hospital Pequeno Príncipe</a>. Iniciativa voluntária, independente e sem intermediação financeira.</p>
+    <p>© 2026 Sidiney Rodrigues · <a href="https://github.com/sidineyr/bb">GitHub</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
